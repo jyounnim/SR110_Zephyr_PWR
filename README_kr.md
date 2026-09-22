@@ -39,14 +39,14 @@ west build -p always -b sr100_rdk/sr100/m55 -d m55 NN_주제/lab \
 
 ## 랩 목록
 
-| 랩 | 제목 | 상태 | 한 줄 요약 |
+| 랩 | 제목 | 한 줄 요약 | 상태 |
 |---|---|---|---|
-| [Lab 00](00_sdk_and_schematic_review/doc/00_sdk_and_schematic_review_kr.md) | SDK/회로도 소스 리뷰 | 완료 (영문 포함) | 이 SDK엔 `CONFIG_PM`이 없고, 회로도상 버튼/RTC/PIR이 `PMU_EN`을 공유한다는 것을 확인 |
-| [Lab 01](01_baseline_active_idle/doc/01_baseline_active_idle_kr.md) | Active vs Idle(WFI) 유휴전류 baseline | 완료 (영문 포함) | 온보드 버튼으로 M55를 ACTIVE/IDLE 전환하며 idle thread 자동 WFI의 전류 절감 효과를 실측 |
-| [Lab 02](02_watchdog_reset/doc/02_watchdog_reset_kr.md) | M55 자체 Watchdog 리셋 | 완료 (영문 포함) | `WDT_FLAG_RESET_SOC`가 자체 완결되지 않고 물리 개입 없이는 복구 안 되는 정지를 유발함을 확인 |
-| [Lab 03](03_ipc_sensor_wake/doc/03_ipc_sensor_wake_kr.md) | M4→M55 IPC(mbox) 기반 wake | 완료 (영문 포함) | M4 가속도계 상태 변화를 mbox로 notify — 리셋 없이 M55가 깨어나는, 유일하게 매끄럽게 동작한 경로 |
-| [Lab 04](04_low_power_wake/doc/04_low_power_wake_kr.md) | `SW7`/`PMU_EN`/`RESET_LOW_POWER_WAKE` 탐색 | 완료 (영문 포함) | SoC가 켜진 상태에서는 `SW7`이 무반응 — 저전력 모드 진입 API 자체가 없어 범위 밖 |
-| [Lab 05](05_reset_cause_design_guide/doc/05_reset_cause_design_guide_kr.md) | 종합: 리셋 원인 기반 설계 가이드 | 완료 | 부트 원인 디스패치 + Lab 03의 mbox 패턴을 합친 대표 코드, Lab 01~04 종합 비교표 |
+| [Lab 00](00_sdk_and_schematic_review/doc/00_sdk_and_schematic_review_kr.md) | SDK/회로도 소스 리뷰 | 이 SDK엔 `CONFIG_PM`이 없고, 회로도상 버튼/RTC/PIR이 `PMU_EN`을 공유한다는 것을 확인 | 완료 |
+| [Lab 01](01_baseline_active_idle/doc/01_baseline_active_idle_kr.md) | Active vs Idle(WFI) 유휴전류 baseline | 온보드 버튼으로 M55를 ACTIVE/IDLE 전환하며 idle thread 자동 WFI의 전류 절감 효과를 실측 | 완료 |
+| [Lab 02](02_watchdog_reset/doc/02_watchdog_reset_kr.md) | M55 자체 Watchdog 리셋 | `WDT_FLAG_RESET_SOC`가 자체 완결되지 않고 물리 개입 없이는 복구 안 되는 정지를 유발함을 확인 | 완료 |
+| [Lab 03](03_ipc_sensor_wake/doc/03_ipc_sensor_wake_kr.md) | M4→M55 IPC(mbox) 기반 wake | M4 가속도계 상태 변화를 mbox로 notify — 리셋 없이 M55가 깨어나는, 유일하게 매끄럽게 동작한 경로 | 완료 |
+| [Lab 04](04_low_power_wake/doc/04_low_power_wake_kr.md) | `SW7`/`PMU_EN`/`RESET_LOW_POWER_WAKE` 탐색 | SoC가 켜진 상태에서는 `SW7`이 무반응 — 저전력 모드 진입 API 자체가 없어 범위 밖 | 완료 |
+| [Lab 05](05_reset_cause_design_guide/doc/05_reset_cause_design_guide_kr.md) | 종합: 리셋 원인 기반 설계 가이드 | 부트 원인 디스패치 + Lab 03의 mbox 패턴을 합친 대표 코드, Lab 01~04 종합 비교표 | 완료 |
 
 ## 총평 — 이 SDK/보드 조합에서 확인된 것
 

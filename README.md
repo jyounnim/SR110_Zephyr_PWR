@@ -39,14 +39,14 @@ west build -p always -b sr100_rdk/sr100/m55 -d m55 NN_topic/lab \
 
 ## Lab list
 
-| Lab | Title | Status | One-line summary |
+| Lab | Title | One-line summary | Status |
 |---|---|---|---|
-| [Lab 00](00_sdk_and_schematic_review/doc/00_sdk_and_schematic_review_en.md) | SDK/schematic source review | Complete (EN available) | Confirms this SDK has no `CONFIG_PM`, and that the schematic's button/RTC/PIR share a `PMU_EN` path |
-| [Lab 01](01_baseline_active_idle/doc/01_baseline_active_idle_en.md) | Active vs Idle (WFI) current baseline | Complete (EN available) | Toggles M55 ACTIVE/IDLE via an onboard button and measures the idle thread's automatic-WFI current savings |
-| [Lab 02](02_watchdog_reset/doc/02_watchdog_reset_en.md) | M55's own watchdog reset | Complete (EN available) | Confirms `WDT_FLAG_RESET_SOC` does not self-complete and leaves the SoC stopped until a physical reset |
-| [Lab 03](03_ipc_sensor_wake/doc/03_ipc_sensor_wake_en.md) | M4→M55 IPC (mbox) wake | Complete (EN available) | M4's accelerometer state change notifies M55 over mbox — the one path confirmed to work smoothly, with no reset |
-| [Lab 04](04_low_power_wake/doc/04_low_power_wake_en.md) | `SW7`/`PMU_EN`/`RESET_LOW_POWER_WAKE` exploration | Complete (EN available) | `SW7` has no effect while the SoC is powered on — there's no API to enter the low-power mode it's meant to wake from |
-| [Lab 05](05_reset_cause_design_guide/doc/05_reset_cause_design_guide_kr.md) | Synthesis: a reset-cause-based design guide | Complete (Korean only) | Combines a boot-time reset-cause dispatch with Lab 03's mbox pattern; includes a Lab 01-04 comparison table |
+| [Lab 00](00_sdk_and_schematic_review/doc/00_sdk_and_schematic_review_en.md) | SDK/schematic source review | Confirms this SDK has no `CONFIG_PM`, and that the schematic's button/RTC/PIR share a `PMU_EN` path | Complete |
+| [Lab 01](01_baseline_active_idle/doc/01_baseline_active_idle_en.md) | Active vs Idle (WFI) current baseline | Toggles M55 ACTIVE/IDLE via an onboard button and measures the idle thread's automatic-WFI current savings | Complete |
+| [Lab 02](02_watchdog_reset/doc/02_watchdog_reset_en.md) | M55's own watchdog reset | Confirms `WDT_FLAG_RESET_SOC` does not self-complete and leaves the SoC stopped until a physical reset | Complete |
+| [Lab 03](03_ipc_sensor_wake/doc/03_ipc_sensor_wake_en.md) | M4→M55 IPC (mbox) wake | M4's accelerometer state change notifies M55 over mbox — the one path confirmed to work smoothly, with no reset | Complete |
+| [Lab 04](04_low_power_wake/doc/04_low_power_wake_en.md) | `SW7`/`PMU_EN`/`RESET_LOW_POWER_WAKE` exploration | `SW7` has no effect while the SoC is powered on — there's no API to enter the low-power mode it's meant to wake from | Complete |
+| [Lab 05](05_reset_cause_design_guide/doc/05_reset_cause_design_guide_en.md) | Synthesis: a reset-cause-based design guide | Combines a boot-time reset-cause dispatch with Lab 03's mbox pattern; includes a Lab 01-04 comparison table | Complete |
 
 ## Overall findings for this SDK/board combination
 
