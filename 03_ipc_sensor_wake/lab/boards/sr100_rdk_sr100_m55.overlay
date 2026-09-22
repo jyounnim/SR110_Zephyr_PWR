@@ -1,0 +1,33 @@
+/*
+ * Lab 03: M4 needs sole ownership of the shared I2C1 bus in this lab, to
+ * read its onboard accelerometer (mc3479) -- see
+ * remote/boards/sr100_rdk_sr100_m4.overlay. M55 has no local sensor or
+ * button use here, so it disables i2c1 and everything hanging off it
+ * (the opposite direction from Lab 01, where M55 was the master).
+ *
+ * A disabled parent bus alone is not enough: child nodes that don't
+ * explicitly set their own status stay at their base "okay" default and
+ * still try to reference the (now-disabled) bus, which fails to compile
+ * -- see this project's Lab 01 troubleshooting doc and the separate
+ * M4<->M55 IPC curriculum for the same issue. Both children are disabled
+ * explicitly here for that reason.
+ *
+ * ipc0's shared-memory-size must match exactly between the M55 and M4
+ * overlays in this lab.
+ */
+
+&gpio_exp0 {
+	status = "disabled";
+};
+
+&ov02c10 {
+	status = "disabled";
+};
+
+&i2c1 {
+	status = "disabled";
+};
+
+&ipc0 {
+	shared-memory-size = <0x400>;
+};

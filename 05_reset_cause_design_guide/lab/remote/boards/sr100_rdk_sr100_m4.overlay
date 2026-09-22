@@ -1,0 +1,21 @@
+/*
+ * Lab 05: reused unchanged from Lab 03's M4 overlay. M4 masters the
+ * shared I2C1 bus in this lab to read the onboard accelerometer
+ * (mc3479, at I2C address 0x4c). i2c1 itself is already "okay" by base
+ * devicetree default, but mc3479 itself defaults to "disabled" in the
+ * base devicetree and must be enabled explicitly.
+ *
+ * mc3479's int-gpios property (wired through gpio_exp0) is unused here --
+ * this lab only ever calls sensor_sample_fetch() by polling.
+ *
+ * ipc0's shared-memory-size must match exactly between the M55 and M4
+ * overlays in this lab.
+ */
+
+&mc3479 {
+	status = "okay";
+};
+
+&ipc0 {
+	shared-memory-size = <0x400>;
+};

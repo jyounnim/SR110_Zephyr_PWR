@@ -1,0 +1,19 @@
+/*
+ * Lab 01 v2: M4's workload in this lab (a fixed heartbeat) does not use
+ * I2C1 at all, and M55 now needs to be the sole master of the shared
+ * I2C1 bus to read the onboard SW8 button through gpio_exp0 (see the M55
+ * overlay in this same lab). Disable both here on M4 -- this is the
+ * opposite of this lab's previous version, which enabled them on M4 by
+ * default (base devicetree) while M55 disabled them.
+ *
+ * Same "one physical I2C1 bus, only one master" rule established in this
+ * project's M4<->M55 IPC curriculum.
+ */
+
+&i2c1 {
+	status = "disabled";
+};
+
+&gpio_exp0 {
+	status = "disabled";
+};

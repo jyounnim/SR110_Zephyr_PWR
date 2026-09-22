@@ -1,0 +1,26 @@
+/*
+ * Lab 01: this lab reads the onboard SW8 ("USER_BUTTON") directly from
+ * M55, which requires the shared I2C1 bus and its GPIO expander
+ * (gpio_exp0) to be enabled here.
+ *
+ * &i2c1 / &gpio_exp0 are intentionally left at their base devicetree
+ * default ("okay") by not overriding them in this file -- do not add a
+ * disable override for either here. See remote/boards/sr100_rdk_sr100_m4.overlay
+ * in this same lab: M4 disables both instead, so only one core masters
+ * the shared physical I2C1 bus (see this project's M4<->M55 IPC
+ * curriculum for the general "one bus, one master" issue this avoids).
+ *
+ * No `&buttons { polling-mode; };` override is here: this lab's main.c
+ * reads SW8 as a plain GPIO directly, bypassing Zephyr's gpio-keys/input
+ * subsystem entirely (its polling AND interrupt modes both had a
+ * confirmed driver-level bug on real hardware -- see the troubleshooting
+ * doc, issues 4-6), reusing only the `gpios` property already defined on
+ * the existing `user_button` devicetree node.
+ *
+ * The camera sensor on this bus is unused in this lab, so it stays
+ * disabled as in every other lab in this curriculum.
+ */
+
+&ov02c10 {
+	status = "disabled";
+};

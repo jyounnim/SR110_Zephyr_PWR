@@ -1,0 +1,10 @@
+/*
+ * Lab 02: M55's dedicated watchdog (wdog0) ships as `status = "disabled"`
+ * in the base devicetree (dts/arm/syna/astra_sr/sr100_m55.dtsi), so this
+ * lab is the first in this curriculum to turn it on. Nothing else on this
+ * board is touched by this lab -- no I2C/GPIO expander, no buttons.
+ */
+
+&wdog0 {
+	status = "okay";
+};
