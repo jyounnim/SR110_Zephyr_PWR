@@ -1,5 +1,7 @@
 # SR110 Zephyr Power Mode Lab Curriculum
 
+**Language:** English | [한국어](README_kr.md)
+
 A hands-on/seminar curriculum that hardware-verifies power management and wake mechanisms between the Cortex-M55 (main core) and Cortex-M4 (Always-On core) on Synaptics' **SR110 (Astra Machina, SR100 SoC)** RDK board, using Zephyr OS (`syna_zephyr_sdk-1.0.0`).
 
 ## Core questions this curriculum asks

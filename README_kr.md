@@ -1,5 +1,7 @@
 # SR110 Zephyr Power Mode 실습 커리큘럼
 
+**Language:** [English](README.md) | 한국어
+
 Synaptics **SR110 (Astra Machina, SR100 SoC)** RDK 보드에서, Cortex-M55(메인 코어)와 Cortex-M4(Always-On 코어) 사이의 전원 관리(Power Management)와 wake 메커니즘을 Zephyr OS(`syna_zephyr_sdk-1.0.0`)로 실기 검증하는 실습/세미나용 커리큘럼입니다.
 
 ## 이 커리큘럼의 핵심 질문
